@@ -1,1008 +1,1012 @@
-        --UI Library
-        local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-        local Window = OrionLib:MakeWindow({Name = "Universal FE - ScriptHub / Version 2.4", HidePremium = true, SaveConfig = true, ConfigFolder = "FE-Hub Config"})
 
-        --Tabs
-        local Hubs = Window:MakeTab({Name = "Hubs and GUIs", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local FE = Window:MakeTab({Name = "Scripts FE", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local Anim = Window:MakeTab({Name = "Animations", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local Community = Window:MakeTab({Name = "Community FE", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local Misc = Window:MakeTab({Name = "Player", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local Teleport = Window:MakeTab({Name = "Teleports", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local Extra = Window:MakeTab({Name = "Extra", Icon = "rbxassetid://4483345998", PremiumOnly = false})
-        local CreditsAndConfig = Window:MakeTab({Name = "Credits/Config", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
-        --Sections
-        local SectionHubs = Hubs:AddSection({Name = "Total Hubs/GUIs: 6"})
-        local SectionFE = FE:AddSection({Name = "Total Scripts: 25"})
-        local SectionAnim = Anim:AddSection({Name = "Total Animations: 8"})
-        local SectionCommunity = Community:AddSection({Name = "Total Scripts: 2"})
-        local SectionCommunityScripts = Community:AddSection({Name = "Scripts here:"})
-        local SectionLP = Misc:AddSection({Name = "Character Functions"})
-        local SectionTeleport = Teleport:AddSection({Name = "Player Teleport"})
-        local SectionTpGames = Teleport:AddSection({Name = "Games Teleport To Use FE"})
-        local SectionGenTeleport = Teleport:AddSection({Name = "Teleport Generator"})
-        local SectionScripts = Extra:AddSection({Name = "Scripts"})
-        local SectionESP = Extra:AddSection({Name = "ESP Function"})
-        local SectionCredits = CreditsAndConfig:AddSection({Name = "Credits"})
-        local SectionConfig = CreditsAndConfig:AddSection({Name = "Configs"})
-        
-        --Paragraph
-        SectionHubs:AddParagraph("Important!","Some hubs are outdated that's why they're free.                                  Use Synapse X to increase your experience of hubs.                                                                                    Check their discord servers to get all required hats!")
-        SectionFE:AddParagraph("Important!","Use Synapse X to increase your experience.                                Some scripts do not work on ScriptWare and others executors.                                                                                    Use the correct animation to work properly!")
-        SectionAnim:AddParagraph("Important!","You must use the correct animation to work properly.")
-        SectionCommunity:AddParagraph("We are adding your FE script!","Wanna know our requirements?                                                       Just join on our Discord server!                                  https://discord.gg/McWdrB4wSs")
-        SectionCommunity:AddButton({Name = "Click To Copy Discord Link ", Callback = function()
-            OrionLib:MakeNotification({Name = "Join pls :)", Content = "Link copied to clipboard, https://discord.gg/McWdrB4wSs", Image = "rbxassetid://4483345998", Time = 3})
-            setclipboard(tostring("https://discord.gg/McWdrB4wSs"))
-        end})
+function scripter()
 
-        -- Global 
+    --UI Library
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Window = OrionLib:MakeWindow({Name = "Universal FE - ScriptHub / Version 2.4", HidePremium = true, SaveConfig = true, ConfigFolder = "FE-Hub Config"})
 
-        _G.reset = false
-        _G.autodisablefeiftoggleofhub = false
-        _G.autoequip = false
+    --Tabs
+    local Hubs = Window:MakeTab({Name = "Hubs and GUIs", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local FE = Window:MakeTab({Name = "Scripts FE", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local Anim = Window:MakeTab({Name = "Animations", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local Community = Window:MakeTab({Name = "Community FE", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local Misc = Window:MakeTab({Name = "Player", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local Teleport = Window:MakeTab({Name = "Teleports", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local Extra = Window:MakeTab({Name = "Extra", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+    local CreditsAndConfig = Window:MakeTab({Name = "Credits/Config", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 
-        local listplr = {}
-        for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-                table.insert(listplr, v.Name)
-        end
+    --Sections
+    local SectionHubs = Hubs:AddSection({Name = "Total Hubs/GUIs: 6"})
+    local SectionFE = FE:AddSection({Name = "Total Scripts: 25"})
+    local SectionAnim = Anim:AddSection({Name = "Total Animations: 8"})
+    local SectionCommunity = Community:AddSection({Name = "Total Scripts: 2"})
+    local SectionCommunityScripts = Community:AddSection({Name = "Scripts here:"})
+    local SectionLP = Misc:AddSection({Name = "Character Functions"})
+    local SectionTeleport = Teleport:AddSection({Name = "Player Teleport"})
+    local SectionTpGames = Teleport:AddSection({Name = "Games Teleport To Use FE"})
+    local SectionGenTeleport = Teleport:AddSection({Name = "Teleport Generator"})
+    local SectionScripts = Extra:AddSection({Name = "Scripts"})
+    local SectionESP = Extra:AddSection({Name = "ESP Function"})
+    local SectionCredits = CreditsAndConfig:AddSection({Name = "Credits"})
+    local SectionConfig = CreditsAndConfig:AddSection({Name = "Configs"})
+    
+    --Paragraph
+    SectionHubs:AddParagraph("Important!","Some hubs are outdated that's why they're free.                                  Use Synapse X to increase your experience of hubs.                                                                                    Check their discord servers to get all required hats!")
+    SectionFE:AddParagraph("Important!","Use Synapse X to increase your experience.                                Some scripts do not work on ScriptWare and others executors.                                                                                    Use the correct animation to work properly!")
+    SectionAnim:AddParagraph("Important!","You must use the correct animation to work properly.")
+    SectionCommunity:AddParagraph("We are adding your FE script!","Wanna know our requirements?                                                       Just join on our Discord server!                                  https://discord.gg/McWdrB4wSs")
+    SectionCommunity:AddButton({Name = "Click To Copy Discord Link ", Callback = function()
+        OrionLib:MakeNotification({Name = "Join pls :)", Content = "Link copied to clipboard, https://discord.gg/McWdrB4wSs", Image = "rbxassetid://4483345998", Time = 3})
+        setclipboard(tostring("https://discord.gg/McWdrB4wSs"))
+    end})
 
-        --Hats
-        --Zombie FE
-        
-        local HatsName1 = {"Kate Hair", "Pal Hair", "Hat1", "BrownCharmerHair", "LavanderHair", "MediHood", "Pink Hair"}
-        local TotalHats1 = 0
-        local UserHats1 = 0
+    -- Global 
 
-        --Gun FE
-        local HatsName2 = {"OldTownCowboy", "rol_icebrainAccessory", "Robloxclassicred", "Pal Hair", "LavanderHair", "Pink Hair", "Kate Hair", "Necklace"}
-        local TotalHats2 = 0
-        local UserHats2 = 0
+    _G.reset = false
+    _G.autodisablefeiftoggleofhub = false
+    _G.autoequip = false
 
-        --AmongUsV3 FE
-        local HatsName3 = {"New Tonk"}
-        local TotalHats3 = 0
-        local UserHats3 = 0
+    local listplr = {}
+    for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+            table.insert(listplr, v.Name)
+    end
 
-        --Car FE
-        local HatsName4 = {"MeshPartAccessory"}
-        local TotalHats4 = 0
-        local UserHats4 = 0
+    --Hats
+    --Zombie FE
+    
+    local HatsName1 = {"Kate Hair", "Pal Hair", "Hat1", "BrownCharmerHair", "LavanderHair", "MediHood", "Pink Hair"}
+    local TotalHats1 = 0
+    local UserHats1 = 0
 
-        --Bicycle Ride FE
-        local HatsName5 = {"Back Bike"}
-        local TotalHats5 = 0
-        local UserHats5 = 0
+    --Gun FE
+    local HatsName2 = {"OldTownCowboy", "rol_icebrainAccessory", "Robloxclassicred", "Pal Hair", "LavanderHair", "Pink Hair", "Kate Hair", "Necklace"}
+    local TotalHats2 = 0
+    local UserHats2 = 0
 
-        --Moai  FE
-        local HatsName6 = {"Nike Shoebox Costume", "MeshPartAccessory", "WDW_FoamFinger", "DreamCap", "gradcap_18"}
-        local TotalHats6 = 0
-        local UserHats6 = 0
+    --AmongUsV3 FE
+    local HatsName3 = {"New Tonk"}
+    local TotalHats3 = 0
+    local UserHats3 = 0
 
-        --Big Boy  FE
-        local HatsName7 = {"Nike Shoebox Costume"}
-        local TotalHats7 = 0
-        local UserHats7 = 0    
+    --Car FE
+    local HatsName4 = {"MeshPartAccessory"}
+    local TotalHats4 = 0
+    local UserHats4 = 0
 
-        --Wide Boy  FE
-        local HatsName8 = {"BlueEnergyWings"}
-        local TotalHats8 = 0
-        local UserHats8 = 0    
+    --Bicycle Ride FE
+    local HatsName5 = {"Back Bike"}
+    local TotalHats5 = 0
+    local UserHats5 = 0
 
-        --Tank V2 FE
-        local HatsName9 = {"New Tonk", "RockAccessory"}
-        local TotalHats9 = 0
-        local UserHats9 = 0   
+    --Moai  FE
+    local HatsName6 = {"Nike Shoebox Costume", "MeshPartAccessory", "WDW_FoamFinger", "DreamCap", "gradcap_18"}
+    local TotalHats6 = 0
+    local UserHats6 = 0
 
-        --Dog FE
-        local HatsName10 = {"Hat1", "Pal Hair", "Kate Hair", "LavanderHair", "Pink Hair", "Robloxclassicred", "Necklace"}
-        local TotalHats10 = 0
-        local UserHats10 = 0   
+    --Big Boy  FE
+    local HatsName7 = {"Nike Shoebox Costume"}
+    local TotalHats7 = 0
+    local UserHats7 = 0    
 
-        --JetPack FE
-        local HatsName11 = {"SamuraiHat", "MeshPartAccessory"}
-        local TotalHats11 = 0
-        local UserHats11 = 0   
+    --Wide Boy  FE
+    local HatsName8 = {"BlueEnergyWings"}
+    local TotalHats8 = 0
+    local UserHats8 = 0    
 
-        --Blue Flame Hoverboard FE
-        local HatsName12 = {"WDW_FoamFinger", "SamuraiHat"}
-        local TotalHats12 = 0
-        local UserHats12 = 0   
+    --Tank V2 FE
+    local HatsName9 = {"New Tonk", "RockAccessory"}
+    local TotalHats9 = 0
+    local UserHats9 = 0   
 
-        --Titan Fling FE
-        local HatsName13 = {"LavanderHair", "Pink Hair", "Kate Hair", "Hat1"}
-        local TotalHats13 = 0
-        local UserHats13 = 0   
+    --Dog FE
+    local HatsName10 = {"Hat1", "Pal Hair", "Kate Hair", "LavanderHair", "Pink Hair", "Robloxclassicred", "Necklace"}
+    local TotalHats10 = 0
+    local UserHats10 = 0   
 
-        --Giant Cube FE
-        local HatsName14 = {"Nike Shoebox Costume", "VANS_Umbrella", "LavanderHair", "Pink Hair", "Kate Hair", "Pal Hair"}
-        local TotalHats14 = 0
-        local UserHats14 = 0   
+    --JetPack FE
+    local HatsName11 = {"SamuraiHat", "MeshPartAccessory"}
+    local TotalHats11 = 0
+    local UserHats11 = 0   
 
-        --Demon FE
-        local HatsName15 = {"New Tonk", "MeshPartAccessory"}
-        local TotalHats15 = 0
-        local UserHats15 = 0   
+    --Blue Flame Hoverboard FE
+    local HatsName12 = {"WDW_FoamFinger", "SamuraiHat"}
+    local TotalHats12 = 0
+    local UserHats12 = 0   
 
-        --Neko FE
-        local HatsName16 = {"PlainTail"}
-        local TotalHats16 = 0
-        local UserHats16 = 0   
+    --Titan Fling FE
+    local HatsName13 = {"LavanderHair", "Pink Hair", "Kate Hair", "Hat1"}
+    local TotalHats13 = 0
+    local UserHats13 = 0   
 
-        --Ghast FE
-        local HatsName17 = {"LavanderHair", "Pal Hair", "Kate Hair", "VANS_Umbrella", "Pink Hair"}
-        local TotalHats17 = 0
-        local UserHats17 = 0
+    --Giant Cube FE
+    local HatsName14 = {"Nike Shoebox Costume", "VANS_Umbrella", "LavanderHair", "Pink Hair", "Kate Hair", "Pal Hair"}
+    local TotalHats14 = 0
+    local UserHats14 = 0   
 
-        --Hammer FE
-        local HatsName18 = {"New Tonk", "Rainbow Katana", "Ethereal Katana", "Negative Katana", "Retrowave Katana"}
-        local TotalHats18 = 0
-        local UserHats18 = 0
+    --Demon FE
+    local HatsName15 = {"New Tonk", "MeshPartAccessory"}
+    local TotalHats15 = 0
+    local UserHats15 = 0   
 
-        --Fling Gun FE
-        local HatsName19 = {"MeshPartAccessory", "Pal Hair", "Lazgewehr-58"}
-        local TotalHats19 = 0
-        local UserHats19 = 0
+    --Neko FE
+    local HatsName16 = {"PlainTail"}
+    local TotalHats16 = 0
+    local UserHats16 = 0   
 
-        --Red Samurai FE
-        local HatsName20 = {"Meshes/cyberbladeMeshAccessory"}
-        local TotalHats20 = 0
-        local UserHats20 = 0
+    --Ghast FE
+    local HatsName17 = {"LavanderHair", "Pal Hair", "Kate Hair", "VANS_Umbrella", "Pink Hair"}
+    local TotalHats17 = 0
+    local UserHats17 = 0
 
-        --NSFW Dick FE
-        local HatsName21 = {"InternationalFedora", "InternationalFedora"}
-        local TotalHats21 = 0
-        local UserHats21 = 0
+    --Hammer FE
+    local HatsName18 = {"New Tonk", "Rainbow Katana", "Ethereal Katana", "Negative Katana", "Retrowave Katana"}
+    local TotalHats18 = 0
+    local UserHats18 = 0
 
-        -- Scripts
+    --Fling Gun FE
+    local HatsName19 = {"MeshPartAccessory", "Pal Hair", "Lazgewehr-58"}
+    local TotalHats19 = 0
+    local UserHats19 = 0
 
-        --Hub
+    --Red Samurai FE
+    local HatsName20 = {"Meshes/cyberbladeMeshAccessory"}
+    local TotalHats20 = 0
+    local UserHats20 = 0
 
-        SectionConfig:AddToggle({ Name = "Auto FE Hard Reset if disable hub", Default = false, Callback = function(Value)
-            _G.autodisablefeiftoggleofhub = Value
-        end})
+    --NSFW Dick FE
+    local HatsName21 = {"InternationalFedora", "InternationalFedora"}
+    local TotalHats21 = 0
+    local UserHats21 = 0
 
-        SectionHubs:AddToggle({ Name = "LX63 Hub - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                setclipboard(tostring("https://discord.gg/ZNmRM6XS7R"))
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: manimcool21", Image = "rbxassetid://4483345998", Time = 2})
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.gg/ZNmRM6XS7R", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet(('https://raw.githubusercontent.com/Gogogamer61/LXHub-Main/main/LXHub%20Main%20Script'),true))()
-            elseif Value == false and game.CoreGui:FindFirstChild("ScreenGui") then
-                game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
+    -- Scripts
+
+    --Hub
+
+    SectionConfig:AddToggle({ Name = "Auto FE Hard Reset if disable hub", Default = false, Callback = function(Value)
+        _G.autodisablefeiftoggleofhub = Value
+    end})
+
+    SectionHubs:AddToggle({ Name = "LX63 Hub - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            setclipboard(tostring("https://discord.gg/ZNmRM6XS7R"))
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: manimcool21", Image = "rbxassetid://4483345998", Time = 2})
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.gg/ZNmRM6XS7R", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/Gogogamer61/LXHub-Main/main/LXHub%20Main%20Script'),true))()
+        elseif Value == false and game.CoreGui:FindFirstChild("ScreenGui") then
+            game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
                 end
-        end})
-
-        SectionHubs:AddToggle({ Name = "HatHubV1 - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                setclipboard(tostring("https://discord.com/invite/hathub"))
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: soda jerk#0001", Image = "rbxassetid://4483345998", Time = 2})
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.com/invite/hathub", Image = "rbxassetid://4483345998", Time = 3})
-                wait(3.3)
-                loadstring(game:HttpGet("https://pastebin.com/raw/1Cjz1RMH"))()
-            elseif Value == false and game.CoreGui:FindFirstChild("ScreenGui") then
-                game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
                 end
-        end})
+            end
+    end})
 
-        SectionHubs:AddToggle({ Name = "Syntax V3 - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                setclipboard(tostring("https://discord.com/invite/syntaxontop"))
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Memeboiyot", Image = "rbxassetid://4483345998", Time = 2})
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.com/invite/syntaxontop", Image = "rbxassetid://4483345998", Time = 3})
-                wait(3.3)
-                loadstring(game:HttpGet("https://pastebin.com/raw/Mx2UGREF"))()
-                OrionLib:MakeNotification({Name = "Required key:", Content = "SyntaxV3Free", Image = "rbxassetid://4483345998", Time = 10})
-            elseif Value == false and game.CoreGui:FindFirstChild("Loader") then
-                game.CoreGui:FindFirstChild("Loader"):Destroy()
-                wait(0.5)
-            elseif Value == false and game.CoreGui:FindFirstChild("Syntax-v3") then
-                game.CoreGui:FindFirstChild("Syntax-v3"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
+    SectionHubs:AddToggle({ Name = "HatHubV1 - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            setclipboard(tostring("https://discord.com/invite/hathub"))
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: soda jerk#0001", Image = "rbxassetid://4483345998", Time = 2})
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.com/invite/hathub", Image = "rbxassetid://4483345998", Time = 3})
+            wait(3.3)
+            loadstring(game:HttpGet("https://pastebin.com/raw/1Cjz1RMH"))()
+        elseif Value == false and game.CoreGui:FindFirstChild("ScreenGui") then
+            game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
                 end
-        end})
-
-        SectionHubs:AddToggle({ Name = "R6 Animation GUI - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Litten", Image = "rbxassetid://4483345998", Time = 2})
-                wait(3.3)
-                loadstring(game:HttpGet("https://pastebin.com/raw/10scUGUB"))()
-            elseif Value == false and game.CoreGui:FindFirstChild("A") then
-                game.CoreGui:FindFirstChild("A"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
                 end
-        end})
+            end
+    end})
 
-        SectionHubs:AddToggle({ Name = "c00lgui V2 - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: LordMuhamad", Image = "rbxassetid://4483345998", Time = 2})
-                wait(3.3)
-                loadstring(game:GetObjects("rbxassetid://9827584846")[1].Source)()
-            elseif Value == false and game.CoreGui:FindFirstChild("c00lguiFE") then
-                game.CoreGui:FindFirstChild("c00lguiFE"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
+    SectionHubs:AddToggle({ Name = "Syntax V3 - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            setclipboard(tostring("https://discord.com/invite/syntaxontop"))
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Memeboiyot", Image = "rbxassetid://4483345998", Time = 2})
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://discord.com/invite/syntaxontop", Image = "rbxassetid://4483345998", Time = 3})
+            wait(3.3)
+            loadstring(game:HttpGet("https://pastebin.com/raw/Mx2UGREF"))()
+            OrionLib:MakeNotification({Name = "Required key:", Content = "SyntaxV3Free", Image = "rbxassetid://4483345998", Time = 10})
+        elseif Value == false and game.CoreGui:FindFirstChild("Loader") then
+            game.CoreGui:FindFirstChild("Loader"):Destroy()
+            wait(0.5)
+        elseif Value == false and game.CoreGui:FindFirstChild("Syntax-v3") then
+            game.CoreGui:FindFirstChild("Syntax-v3"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
                 end
-        end})
-
-        SectionHubs:AddToggle({ Name = "Nullware - Toggleable", Default = false, Callback = function(Value)
-            if Value == true then
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: BigMilk Boss and hayper", Image = "rbxassetid://4483345998", Time = 2})
-                setclipboard(tostring("https://pastebin.com/dxwdUkTq"))
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/dxwdUkTq", Image = "rbxassetid://4483345998", Time = 3})
-                wait(3.3)
-                loadstring(game:HttpGet("https://pastebin.com/raw/wjCq0kAr"))()
-            elseif Value == false and game.CoreGui:FindFirstChild("Gui") then
-                game.CoreGui:FindFirstChild("Gui"):Destroy()
-                wait(0.5)
-                if _G.autodisablefeiftoggleofhub == true then
-                    if game.PlaceId == 5100950559 then
-                        game.Players:Chat('-gr')
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        game.Players.LocalPlayer.Character:Destroy()
-                        OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                        wait(6.5)
-                        OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                    end
-                    end
                 end
-        end})
+            end
+    end})
 
-        
+    SectionHubs:AddToggle({ Name = "R6 Animation GUI - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Litten", Image = "rbxassetid://4483345998", Time = 2})
+            wait(3.3)
+            loadstring(game:HttpGet("https://pastebin.com/raw/10scUGUB"))()
+        elseif Value == false and game.CoreGui:FindFirstChild("A") then
+            game.CoreGui:FindFirstChild("A"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
+                end
+                end
+            end
+    end})
 
-        --FE
-        SectionConfig:AddToggle({ Name = "Automatically equip required hats (Just Grass)", Default = false, Callback = function(Value)
-            _G.autoequip = Value
-        end})
+    SectionHubs:AddToggle({ Name = "c00lgui V2 - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: LordMuhamad", Image = "rbxassetid://4483345998", Time = 2})
+            wait(3.3)
+            loadstring(game:GetObjects("rbxassetid://9827584846")[1].Source)()
+        elseif Value == false and game.CoreGui:FindFirstChild("c00lguiFE") then
+            game.CoreGui:FindFirstChild("c00lguiFE"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
+                end
+                end
+            end
+    end})
+
+    SectionHubs:AddToggle({ Name = "Nullware - Toggleable", Default = false, Callback = function(Value)
+        if Value == true then
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: BigMilk Boss and hayper", Image = "rbxassetid://4483345998", Time = 2})
+            setclipboard(tostring("https://pastebin.com/dxwdUkTq"))
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/dxwdUkTq", Image = "rbxassetid://4483345998", Time = 3})
+            wait(3.3)
+            loadstring(game:HttpGet("https://pastebin.com/raw/wjCq0kAr"))()
+        elseif Value == false and game.CoreGui:FindFirstChild("Gui") then
+            game.CoreGui:FindFirstChild("Gui"):Destroy()
+            wait(0.5)
+            if _G.autodisablefeiftoggleofhub == true then
+                if game.PlaceId == 5100950559 then
+                    game.Players:Chat('-gr')
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+                else
+                    game.Players.LocalPlayer.Character:Destroy()
+                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                    wait(6.5)
+                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
+                end
+                end
+            end
+    end})
 
     
-        
+
+    --FE
+    SectionConfig:AddToggle({ Name = "Automatically equip required hats (Just Grass)", Default = false, Callback = function(Value)
+        _G.autoequip = Value
+    end})
 
 
-        SectionFE:AddButton({Name = "Zombie (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                        game.Players:Chat("-gh 451220849, 62724852, 48474294, 63690008, 62234425, 376548738, 617605556")
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                        wait(1)
-                        loadstring(game:HttpGet("https://gist.githubusercontent.com/someunknowndude/18f1d979ad9a25ad69064be75f55f735/raw/dc36f1e9ad906a7434bd77bcd0ce8218fb5f4d88/zombie.lua"))()
-                        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: quirky anime boy#7003", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                for i,v in pairs(HatsName1) do
-                    TotalHats1 += 1
-                end
-                for i,v in pairs(HatsName1) do
-                    if game.Players.LocalPlayer.Character ~= nil then
-                        if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                        UserHats1 += 1
-                        end
-                    end
-                end
-                if UserHats1 == TotalHats1 then
-                    UserHats1 = 0
-                    TotalHats1 = 0
+    
+
+
+    SectionFE:AddButton({Name = "Zombie (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+                    game.Players:Chat("-gh 451220849, 62724852, 48474294, 63690008, 62234425, 376548738, 617605556")
                     OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                    OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
                     wait(1)
                     loadstring(game:HttpGet("https://gist.githubusercontent.com/someunknowndude/18f1d979ad9a25ad69064be75f55f735/raw/dc36f1e9ad906a7434bd77bcd0ce8218fb5f4d88/zombie.lua"))()
                     OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: quirky anime boy#7003", Image = "rbxassetid://4483345998", Time = 2})
-                    
-                else
-                    OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/kqgC8s9E", Image = "rbxassetid://4483345998", Time = 3})
-                    setclipboard(tostring("https://pastebin.com/kqgC8s9E"))
-                    UserHats1 = 0
-                    TotalHats1 = 0
+        else
+            for i,v in pairs(HatsName1) do
+                TotalHats1 += 1
+            end
+            for i,v in pairs(HatsName1) do
+                if game.Players.LocalPlayer.Character ~= nil then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                    UserHats1 += 1
+                    end
                 end
             end
-        end})
+            if UserHats1 == TotalHats1 then
+                UserHats1 = 0
+                TotalHats1 = 0
+                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+                wait(1)
+                loadstring(game:HttpGet("https://gist.githubusercontent.com/someunknowndude/18f1d979ad9a25ad69064be75f55f735/raw/dc36f1e9ad906a7434bd77bcd0ce8218fb5f4d88/zombie.lua"))()
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: quirky anime boy#7003", Image = "rbxassetid://4483345998", Time = 2})
+                
+            else
+                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/kqgC8s9E", Image = "rbxassetid://4483345998", Time = 3})
+                setclipboard(tostring("https://pastebin.com/kqgC8s9E"))
+                UserHats1 = 0
+                TotalHats1 = 0
+            end
+        end
+    end})
 
-        SectionFE:AddButton({Name = "Gun (R6 and R15)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                    game.Players:Chat("-gh 5917433699, 8136940617, 48474294, 451220849, 62724852, 63690008, 48474313, 376527115")
+    SectionFE:AddButton({Name = "Gun (R6 and R15)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+                game.Players:Chat("-gh 5917433699, 8136940617, 48474294, 451220849, 62724852, 63690008, 48474313, 376527115")
+                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+                wait(1)
+                loadstring(game:HttpGet("https://pastebin.com/raw/JKXTxSzw"))()
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: fx 8320", Image = "rbxassetid://4483345998", Time = 2})
+        else
+                for i,v in pairs(HatsName2) do
+                    TotalHats2 += 1
+                end
+                for i,v in pairs(HatsName2) do
+                    if game.Players.LocalPlayer.Character ~= nil then
+                        if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                        UserHats2 += 1
+                        end
+                    end
+                end
+                if UserHats2 == TotalHats2 then
+                    UserHats2 = 0
+                    TotalHats2 = 0
                     OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
                     wait(1)
                     loadstring(game:HttpGet("https://pastebin.com/raw/JKXTxSzw"))()
                     OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: fx 8320", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                    for i,v in pairs(HatsName2) do
-                        TotalHats2 += 1
-                    end
-                    for i,v in pairs(HatsName2) do
-                        if game.Players.LocalPlayer.Character ~= nil then
-                            if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                            UserHats2 += 1
-                            end
+                else
+                    OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/0vH7yzmy", Image = "rbxassetid://4483345998", Time = 3})
+                    setclipboard(tostring("https://pastebin.com/0vH7yzmy"))
+                    UserHats2 = 0
+                    TotalHats2 = 0
+            end
+        end
+    end})
+
+    SectionFE:AddButton({Name = "Car (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+                game.Players:Chat("-gh 4585144193")
+                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+                wait(1)
+                loadstring(game:HttpGet("https://pastebin.com/raw/EWWS4WKd"))()
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        else
+                for i,v in pairs(HatsName4) do
+                    TotalHats4 += 1
+                end
+                for i,v in pairs(HatsName4) do
+                    if game.Players.LocalPlayer.Character ~= nil then
+                        if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                        UserHats4 += 1
                         end
                     end
-                    if UserHats2 == TotalHats2 then
-                        UserHats2 = 0
-                        TotalHats2 = 0
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                        wait(1)
-                        loadstring(game:HttpGet("https://pastebin.com/raw/JKXTxSzw"))()
-                        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: fx 8320", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/0vH7yzmy", Image = "rbxassetid://4483345998", Time = 3})
-                        setclipboard(tostring("https://pastebin.com/0vH7yzmy"))
-                        UserHats2 = 0
-                        TotalHats2 = 0
                 end
-            end
-        end})
-
-        SectionFE:AddButton({Name = "Car (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                    game.Players:Chat("-gh 4585144193")
+                if UserHats4 == TotalHats4 then
+                    UserHats4 = 0
+                    TotalHats4 = 0
                     OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
                     wait(1)
                     loadstring(game:HttpGet("https://pastebin.com/raw/EWWS4WKd"))()
                     OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                    for i,v in pairs(HatsName4) do
-                        TotalHats4 += 1
-                    end
-                    for i,v in pairs(HatsName4) do
-                        if game.Players.LocalPlayer.Character ~= nil then
-                            if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                            UserHats4 += 1
-                            end
-                        end
-                    end
-                    if UserHats4 == TotalHats4 then
-                        UserHats4 = 0
-                        TotalHats4 = 0
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                        wait(1)
-                        loadstring(game:HttpGet("https://pastebin.com/raw/EWWS4WKd"))()
-                        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-                    else
-                        OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/H0jMgLLc", Image = "rbxassetid://4483345998", Time = 3})
-                        setclipboard(tostring("https://pastebin.com/H0jMgLLc"))
-                        UserHats4 = 0
-                        TotalHats4 = 0
-                end
+                else
+                    OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/H0jMgLLc", Image = "rbxassetid://4483345998", Time = 3})
+                    setclipboard(tostring("https://pastebin.com/H0jMgLLc"))
+                    UserHats4 = 0
+                    TotalHats4 = 0
             end
-        end})
+        end
+    end})
 
-        SectionFE:AddButton({Name = "AmongUsV3 (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 4735116238")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet("https://pastebin.com/raw/UD01E1D5"))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELETIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName3) do
-                TotalHats3 += 1
-            end
-            for i,v in pairs(HatsName3) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats3 += 1
-                    end
+    SectionFE:AddButton({Name = "AmongUsV3 (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 4735116238")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet("https://pastebin.com/raw/UD01E1D5"))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELETIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName3) do
+            TotalHats3 += 1
+        end
+        for i,v in pairs(HatsName3) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats3 += 1
                 end
             end
-            if UserHats3 == TotalHats3 then
-                UserHats3 = 0
-                TotalHats3 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet("https://pastebin.com/raw/UD01E1D5"))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELETIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/iJGpPx2z", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/iJGpPx2z"))
-                UserHats3 = 0
-                TotalHats3 = 0
-            end
         end
-        end})
+        if UserHats3 == TotalHats3 then
+            UserHats3 = 0
+            TotalHats3 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet("https://pastebin.com/raw/UD01E1D5"))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELETIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/iJGpPx2z", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/iJGpPx2z"))
+            UserHats3 = 0
+            TotalHats3 = 0
+        end
+    end
+    end})
 
-        SectionFE:AddButton({Name = "Bicycle Ride (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9743558381")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet("https://pastebin.com/raw/pMYatdu0"))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName5) do
-                TotalHats5 += 1
-            end
-            for i,v in pairs(HatsName5) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats5 += 1
-                    end
+    SectionFE:AddButton({Name = "Bicycle Ride (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9743558381")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet("https://pastebin.com/raw/pMYatdu0"))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName5) do
+            TotalHats5 += 1
+        end
+        for i,v in pairs(HatsName5) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats5 += 1
                 end
             end
-            if UserHats5 == TotalHats5 then
-                UserHats5 = 0
-                TotalHats5 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet(('https://pastebin.com/raw/pMYatdu0'),true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/9QyMhkUT", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/9QyMhkUT"))
-                UserHats5 = 0
-                TotalHats5 = 0
-            end
         end
-        end})
+        if UserHats5 == TotalHats5 then
+            UserHats5 = 0
+            TotalHats5 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet(('https://pastebin.com/raw/pMYatdu0'),true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/9QyMhkUT", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/9QyMhkUT"))
+            UserHats5 = 0
+            TotalHats5 = 0
+        end
+    end
+    end})
 
-        SectionFE:AddButton({Name = "Moai (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9661543986,4435389917,6470135113,1744235800,1744219293")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/kdm05/releases/main/Moai.lua'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: kdm05", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName6) do
-                TotalHats6 += 1
-            end
-            for i,v in pairs(HatsName6) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats6 += 1
-                    end
+    SectionFE:AddButton({Name = "Moai (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9661543986,4435389917,6470135113,1744235800,1744219293")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/kdm05/releases/main/Moai.lua'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: kdm05", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName6) do
+            TotalHats6 += 1
+        end
+        for i,v in pairs(HatsName6) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats6 += 1
                 end
             end
-            if UserHats6 == TotalHats6 then
-                UserHats6 = 0
-                TotalHats6 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet(('https://raw.githubusercontent.com/kdm05/releases/main/Moai.lua'),true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: kdm05", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/PYsHU7Pa", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/PYsHU7Pa"))
-                UserHats6 = 0
-                TotalHats6 = 0
-            end
         end
-        end})
+        if UserHats6 == TotalHats6 then
+            UserHats6 = 0
+            TotalHats6 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet(('https://raw.githubusercontent.com/kdm05/releases/main/Moai.lua'),true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: kdm05", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/PYsHU7Pa", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/PYsHU7Pa"))
+            UserHats6 = 0
+            TotalHats6 = 0
+        end
+    end
+    end})
 
-        SectionFE:AddButton({Name = "BigBoy (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9661543986")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://paste.ee/r/gQOXW', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName7) do
-                TotalHats7 += 1
-            end
-            for i,v in pairs(HatsName7) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats7 += 1
-                    end
+    SectionFE:AddButton({Name = "BigBoy (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9661543986")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://paste.ee/r/gQOXW', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName7) do
+            TotalHats7 += 1
+        end
+        for i,v in pairs(HatsName7) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats7 += 1
                 end
             end
-            if UserHats7 == TotalHats7 then
-                UserHats7 = 0
-                TotalHats7 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://paste.ee/r/gQOXW', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/E3bSmp13", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/E3bSmp13"))
-                UserHats7 = 0
-                TotalHats7 = 0
-            end
         end
-        end})
+        if UserHats7 == TotalHats7 then
+            UserHats7 = 0
+            TotalHats7 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://paste.ee/r/gQOXW', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/E3bSmp13", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/E3bSmp13"))
+            UserHats7 = 0
+            TotalHats7 = 0
+        end
+    end
+    end})
 
-        SectionFE:AddButton({Name = "WideBoy (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 5074143464")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://paste.ee/r/FYx2k', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName8) do
-                TotalHats8 += 1
-            end
-            for i,v in pairs(HatsName8) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats8 += 1
-                    end
+    SectionFE:AddButton({Name = "WideBoy (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 5074143464")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://paste.ee/r/FYx2k', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName8) do
+            TotalHats8 += 1
+        end
+        for i,v in pairs(HatsName8) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats8 += 1
                 end
             end
-            if UserHats8 == TotalHats8 then
-                UserHats8 = 0
-                TotalHats8 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://paste.ee/r/FYx2k', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/1gDXLme3", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/1gDXLme3"))
-                UserHats8 = 0
-                TotalHats8 = 0
-            end
         end
-        end})
-        
-        SectionFE:AddButton({Name = "Tank V2 (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 4504231783,4735116238")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/JnCGqMh7', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        if UserHats8 == TotalHats8 then
+            UserHats8 = 0
+            TotalHats8 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://paste.ee/r/FYx2k', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
         else
-            for i,v in pairs(HatsName9) do
-                TotalHats9 += 1
-            end
-            for i,v in pairs(HatsName9) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats9 += 1
-                    end
-                end
-            end
-            if UserHats9 == TotalHats9 then
-                UserHats9 = 0
-                TotalHats9 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/JnCGqMh7', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/caed5e83", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/caed5e83"))
-                UserHats9 = 0
-                TotalHats9 = 0
-            end
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/1gDXLme3", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/1gDXLme3"))
+            UserHats8 = 0
+            TotalHats8 = 0
         end
-        end})
-
-        SectionFE:AddButton({Name = "Dog (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 62234425,63690008,62724852,451220849,48474294,48474313,376527115")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/q0LbJpzU', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName10) do
-                TotalHats10 += 1
-            end
-            for i,v in pairs(HatsName10) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats10 += 1
-                    end
-                end
-            end
-            if UserHats10 == TotalHats10 then
-                UserHats10 = 0
-                TotalHats10 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/q0LbJpzU', true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/AqQd9FSm", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/AqQd9FSm"))
-                UserHats10 = 0
-                TotalHats10 = 0
-            end
-        end
-        end})
-
-        SectionFE:AddButton({Name = "JetPack (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9560383533,4368717651-gh 9560383533,4368717651")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/PYXDYT/FE-JET/main/V1'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName11) do
-                TotalHats11 += 1
-            end
-            for i,v in pairs(HatsName11) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats11 += 1
-                    end
-                end
-            end
-            if UserHats11 == TotalHats11 then
-                UserHats11 = 0
-                TotalHats11 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/PYXDYT/FE-JET/main/V1'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/qZPMLPMZ", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/qZPMLPMZ"))
-                UserHats11 = 0
-                TotalHats11 = 0
-            end
-        end
-        end})
-
-        SectionFE:AddButton({Name = "Blue Flame Hoverboard (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 6470135113,9560383533")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet(('https://pastebin.com/raw/U2VHEdFB'),true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName12) do
-                TotalHats12 += 1
-            end
-            for i,v in pairs(HatsName12) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats12 += 1
-                    end
-                end
-            end
-            if UserHats12 == TotalHats12 then
-                UserHats12 = 0
-                TotalHats1 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet(('https://pastebin.com/raw/U2VHEdFB'),true))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/DUamgQYn", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/DUamgQYn"))
-                UserHats12 = 0
-                TotalHats12 = 0
-            end
-        end
-        end})
-
-        SectionFE:AddButton({Name = "Titan Fling (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 451220849,48474294,62724852,62234425")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/b0xjJ1Sh'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Vidal#5057", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName13) do
-                TotalHats13 += 1
-            end
-            for i,v in pairs(HatsName13) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats13 += 1
-                    end
-                end
-            end
-            if UserHats13 == TotalHats13 then
-                UserHats13 = 0
-                TotalHats13 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/b0xjJ1Sh'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Vidal#5057", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/MtHCt9HU", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/MtHCt9HU"))
-                UserHats13 = 0
-                TotalHats13 = 0
-            end
-        end
-        end})
+    end
+    end})
     
-        SectionFE:AddButton({Name = "Giant Cube (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/J5Q6CVT7'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Alt3r#5217", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName14) do
-                TotalHats14 += 1
-            end
-            for i,v in pairs(HatsName14) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats14 += 1
-                    end
+    SectionFE:AddButton({Name = "Tank V2 (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 4504231783,4735116238")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/JnCGqMh7', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName9) do
+            TotalHats9 += 1
+        end
+        for i,v in pairs(HatsName9) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats9 += 1
                 end
             end
-            if UserHats14 == TotalHats14 then
-                UserHats14 = 0
-                TotalHats14 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/J5Q6CVT7'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Alt3r#5217", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/TNuidePQ", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/TNuidePQ"))
-                UserHats14 = 0
-                TotalHats14 = 0
-            end
         end
-        end})
-    
-        SectionFE:AddButton({Name = "Demon (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/TyCollor/UFE/main/DemonFE'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+        if UserHats9 == TotalHats9 then
+            UserHats9 = 0
+            TotalHats9 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/JnCGqMh7', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
         else
-            for i,v in pairs(HatsName15) do
-                TotalHats15 += 1
-            end
-            for i,v in pairs(HatsName15) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats15 += 1
-                    end
-                end
-            end
-            if UserHats15 == TotalHats15 then
-                UserHats15 = 0
-                TotalHats15 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/TyCollor/UFE/main/DemonFE'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/NHepyeji", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/NHepyeji"))
-                UserHats15 = 0
-                TotalHats15 = 0
-            end
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/caed5e83", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/caed5e83"))
+            UserHats9 = 0
+            TotalHats9 = 0
         end
-        end})
-    
-        SectionFE:AddButton({Name = "Neko (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 4645440842")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/4Lp8cv88'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Creo", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName16) do
-                TotalHats16 += 1
-            end
-            for i,v in pairs(HatsName16) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats16 += 1
-                    end
-                end
-            end
-            if UserHats16 == TotalHats16 then
-                UserHats16 = 0
-                TotalHats16 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/4Lp8cv88'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Creo", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hat:", Content = "Link copied to clipboard, https://web.roblox.com/catalog/4645440842/Plain-White-Cat-Tail", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://web.roblox.com/catalog/4645440842/Plain-White-Cat-Tail"))
-                UserHats16 = 0
-                TotalHats16 = 0
-            end
-        end
-        end})
-    
-        SectionFE:AddButton({Name = "Ghast (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastefy.ga/zFn0z6VV/raw'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName17) do
-                TotalHats17 += 1
-            end
-            for i,v in pairs(HatsName17) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats17 += 1
-                    end
-                end
-            end
-            if UserHats17 == TotalHats17 then
-                UserHats17 = 0
-                TotalHats17 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastefy.ga/zFn0z6VV/raw'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/1KHeJf7L", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/1KHeJf7L"))
-                UserHats17 = 0
-                TotalHats17 = 0
-            end
-        end
-        end})
+    end
+    end})
 
-        SectionFE:AddButton({Name = "Hammer Arm (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 4735116238,5314249208,5314234050,5314242179,5314258567")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/huhKpiVv'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName18) do
-                TotalHats18 += 1
-            end
-            for i,v in pairs(HatsName18) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats18 += 1
-                    end
+    SectionFE:AddButton({Name = "Dog (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 62234425,63690008,62724852,451220849,48474294,48474313,376527115")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/q0LbJpzU', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName10) do
+            TotalHats10 += 1
+        end
+        for i,v in pairs(HatsName10) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats10 += 1
                 end
             end
-            if UserHats18 == TotalHats18 then
-                UserHats18 = 0
-                TotalHats18 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/huhKpiVv'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/D3f7jqcv", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/D3f7jqcv"))
-                UserHats18 = 0
-                TotalHats18 = 0
+        end
+        if UserHats10 == TotalHats10 then
+            UserHats10 = 0
+            TotalHats10 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/q0LbJpzU', true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/AqQd9FSm", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/AqQd9FSm"))
+            UserHats10 = 0
+            TotalHats10 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "JetPack (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9560383533,4368717651-gh 9560383533,4368717651")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/PYXDYT/FE-JET/main/V1'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName11) do
+            TotalHats11 += 1
+        end
+        for i,v in pairs(HatsName11) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats11 += 1
+                end
             end
         end
-        end})
-        
+        if UserHats11 == TotalHats11 then
+            UserHats11 = 0
+            TotalHats11 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/PYXDYT/FE-JET/main/V1'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/qZPMLPMZ", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/qZPMLPMZ"))
+            UserHats11 = 0
+            TotalHats11 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Blue Flame Hoverboard (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 6470135113,9560383533")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet(('https://pastebin.com/raw/U2VHEdFB'),true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName12) do
+            TotalHats12 += 1
+        end
+        for i,v in pairs(HatsName12) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats12 += 1
+                end
+            end
+        end
+        if UserHats12 == TotalHats12 then
+            UserHats12 = 0
+            TotalHats1 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet(('https://pastebin.com/raw/U2VHEdFB'),true))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: PY#9528", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/DUamgQYn", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/DUamgQYn"))
+            UserHats12 = 0
+            TotalHats12 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Titan Fling (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 451220849,48474294,62724852,62234425")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/b0xjJ1Sh'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Vidal#5057", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName13) do
+            TotalHats13 += 1
+        end
+        for i,v in pairs(HatsName13) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats13 += 1
+                end
+            end
+        end
+        if UserHats13 == TotalHats13 then
+            UserHats13 = 0
+            TotalHats13 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/b0xjJ1Sh'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Vidal#5057", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/MtHCt9HU", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/MtHCt9HU"))
+            UserHats13 = 0
+            TotalHats13 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Giant Cube (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/J5Q6CVT7'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Alt3r#5217", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName14) do
+            TotalHats14 += 1
+        end
+        for i,v in pairs(HatsName14) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats14 += 1
+                end
+            end
+        end
+        if UserHats14 == TotalHats14 then
+            UserHats14 = 0
+            TotalHats14 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/J5Q6CVT7'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Alt3r#5217", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/TNuidePQ", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/TNuidePQ"))
+            UserHats14 = 0
+            TotalHats14 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Demon (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet(''))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName15) do
+            TotalHats15 += 1
+        end
+        for i,v in pairs(HatsName15) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats15 += 1
+                end
+            end
+        end
+        if UserHats15 == TotalHats15 then
+            UserHats15 = 0
+            TotalHats15 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet(''))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/NHepyeji", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/NHepyeji"))
+            UserHats15 = 0
+            TotalHats15 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Neko (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 4645440842")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/4Lp8cv88'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Creo", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName16) do
+            TotalHats16 += 1
+        end
+        for i,v in pairs(HatsName16) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats16 += 1
+                end
+            end
+        end
+        if UserHats16 == TotalHats16 then
+            UserHats16 = 0
+            TotalHats16 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/4Lp8cv88'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Creo", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hat:", Content = "Link copied to clipboard, https://web.roblox.com/catalog/4645440842/Plain-White-Cat-Tail", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://web.roblox.com/catalog/4645440842/Plain-White-Cat-Tail"))
+            UserHats16 = 0
+            TotalHats16 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Ghast (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 9661543986,9350274205,451220849,48474294,62724852,63690008")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastefy.ga/zFn0z6VV/raw'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName17) do
+            TotalHats17 += 1
+        end
+        for i,v in pairs(HatsName17) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats17 += 1
+                end
+            end
+        end
+        if UserHats17 == TotalHats17 then
+            UserHats17 = 0
+            TotalHats17 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastefy.ga/zFn0z6VV/raw'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Charlie aka. تشارلي#0001", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/1KHeJf7L", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/1KHeJf7L"))
+            UserHats17 = 0
+            TotalHats17 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Hammer Arm (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 4735116238,5314249208,5314234050,5314242179,5314258567")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/huhKpiVv'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName18) do
+            TotalHats18 += 1
+        end
+        for i,v in pairs(HatsName18) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats18 += 1
+                end
+            end
+        end
+        if UserHats18 == TotalHats18 then
+            UserHats18 = 0
+            TotalHats18 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/huhKpiVv'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/D3f7jqcv", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/D3f7jqcv"))
+            UserHats18 = 0
+            TotalHats18 = 0
+        end
+    end
+    end})
     
-        SectionFE:AddButton({Name = "Fling Gunner (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 4753437569,63690008,6533517173")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://pastebin.com/raw/zgwE1iC3'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
-        else
-            for i,v in pairs(HatsName19) do
-                TotalHats19 += 1
-            end
-            for i,v in pairs(HatsName19) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats19 += 1
-                    end
+
+    SectionFE:AddButton({Name = "Fling Gunner (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 4753437569,63690008,6533517173")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://pastebin.com/raw/zgwE1iC3'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName19) do
+            TotalHats19 += 1
+        end
+        for i,v in pairs(HatsName19) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats19 += 1
                 end
             end
-            if UserHats19 == TotalHats19 then
-                UserHats19 = 0
-                TotalHats19 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://pastebin.com/raw/zgwE1iC3'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/9Jxwjxtv", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/9Jxwjxtv"))
-                UserHats19 = 0
-                TotalHats19 = 0
-            end
         end
-        end})
-
-        SectionFE:AddButton({Name = "Red Samurai (R6 Only)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                game.Players:Chat("-gh 5870508493")
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1.5)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: 09Ice_Fire09", Image = "rbxassetid://4483345998", Time = 2})
+        if UserHats19 == TotalHats19 then
+            UserHats19 = 0
+            TotalHats19 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://pastebin.com/raw/zgwE1iC3'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Delectiv#1857", Image = "rbxassetid://4483345998", Time = 2})
         else
-            for i,v in pairs(HatsName20) do
-                TotalHats20 += 1
-            end
-            for i,v in pairs(HatsName20) do
-                if game.Players.LocalPlayer.Character ~= nil then
-                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                    UserHats20 += 1
-                    end
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/9Jxwjxtv", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/9Jxwjxtv"))
+            UserHats19 = 0
+            TotalHats19 = 0
+        end
+    end
+    end})
+
+    SectionFE:AddButton({Name = "Red Samurai (R6 Only)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+            game.Players:Chat("-gh 5870508493")
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1.5)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: 09Ice_Fire09", Image = "rbxassetid://4483345998", Time = 2})
+    else
+        for i,v in pairs(HatsName20) do
+            TotalHats20 += 1
+        end
+        for i,v in pairs(HatsName20) do
+            if game.Players.LocalPlayer.Character ~= nil then
+                if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                UserHats20 += 1
                 end
             end
-            if UserHats20 == TotalHats20 then
-                UserHats20 = 0
-                TotalHats20 = 0
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                wait(1)
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'))()
-                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: 09Ice_Fire09", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/yCcBjqBb", Image = "rbxassetid://4483345998", Time = 3})
-                setclipboard(tostring("https://pastebin.com/yCcBjqBb"))
-                UserHats20 = 0
-                TotalHats20 = 0
-            end
         end
-        end})
+        if UserHats20 == TotalHats20 then
+            UserHats20 = 0
+            TotalHats20 = 0
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+            wait(1)
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/kakabok1233453/asdasda/main/Red%20Samurai'))()
+            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: 09Ice_Fire09", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://pastebin.com/yCcBjqBb", Image = "rbxassetid://4483345998", Time = 3})
+            setclipboard(tostring("https://pastebin.com/yCcBjqBb"))
+            UserHats20 = 0
+            TotalHats20 = 0
+        end
+    end
+    end})
 
-        SectionFE:AddButton({Name = "NSFW Dick (R6 Only)", Callback = function()
-        --[[
+    SectionFE:AddButton({Name = "NSFW Dick (R6 Only)", Callback = function()
+    --[[
 
 hats needed, YOU NEED THIS EXACT HATS but you can have other hats:
 
@@ -1036,12 +1040,12 @@ end)
 end
 end
 
-   --^ didnt make this
+--^ didnt make this
 
 
 if game.PlaceId == 2228128339 then
-    r15 = true
-    end
+r15 = true
+end
 --set charac to give someone else the hotdog
 --forceplayer when true makes you teleport to the end of the hotdog when you pick the charac
 --↓↓↓↓ settings
@@ -1051,24 +1055,24 @@ forceplayer = false
 
 --dont worry about the rest of the code
 if charac == nil then
-   forced = game.Players.LocalPlayer.Character
-   else
-   forced = game.Players[charac].Character
+forced = game.Players.LocalPlayer.Character
+else
+forced = game.Players[charac].Character
 end
 
 
 if game.Players.LocalPlayer.Character:FindFirstChild("UpperTorso") then
-   r15 = true
-   else
-       r6 = true
+r15 = true
+else
+   r6 = true
 end
 
 
 if forced:FindFirstChild("UpperTorso") then
-   sustorso = forced.UpperTorso
-   else
-       sustorso = forced.Torso
-   end
+sustorso = forced.UpperTorso
+else
+   sustorso = forced.Torso
+end
 -- set to this for charac to tp you to end
 
 -- script made antgame11 on v3rm <3
@@ -1215,7 +1219,7 @@ ao.Attachment1 = att1
 ao.RigidityEnabled = true
 
 if charac == nil then else
-   if forceplayer == true then
+if forceplayer == true then
 att0 = Instance.new("Attachment",char["HumanoidRootPart"])
 att0.Orientation = Vector3.new(0, 0, 0)
 att0.Position = Vector3.new(0, 0, 5.5)
@@ -1230,508 +1234,510 @@ ao.Attachment1 = att1
 ao.RigidityEnabled = true
 end
 end
-        end})
+    end})
 
-        
+    
 
 
-        SectionFE:AddButton({Name = "Invisibility (R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Blitz#9717", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
-        end})
+    SectionFE:AddButton({Name = "Invisibility (R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Blitz#9717", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+    end})
 
-        SectionFE:AddButton({Name = "Walkwalls (R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/VxVN9gny"))()
-        end})
+    SectionFE:AddButton({Name = "Walkwalls (R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/VxVN9gny"))()
+    end})
 
-        SectionFE:AddButton({Name = "Ragdoll (R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/ivQamztP"))()
-        end})
+    SectionFE:AddButton({Name = "Ragdoll (R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/ivQamztP"))()
+    end})
 
-        SectionFE:AddButton({Name = "Giant (R15 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R15", Image = "rbxassetid://4483345998", Time = 3})
-            OrionLib:MakeNotification({Name = "Required Scales:", Content = "Link copied to clipboard, https://pastebin.com/TrTQ4hus", Image = "rbxassetid://4483345998", Time = 4})
-            setclipboard(tostring("https://pastebin.com/TrTQ4hus"))
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/SgP2hL1n"))()
-        end})
+    SectionFE:AddButton({Name = "Giant (R15 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R15", Image = "rbxassetid://4483345998", Time = 3})
+        OrionLib:MakeNotification({Name = "Required Scales:", Content = "Link copied to clipboard, https://pastebin.com/TrTQ4hus", Image = "rbxassetid://4483345998", Time = 4})
+        setclipboard(tostring("https://pastebin.com/TrTQ4hus"))
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/SgP2hL1n"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Breakdance (Animation/R15 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R15", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/7WW5qe6g"))()
-        end})
+    SectionAnim:AddButton({Name = "Breakdance (Animation/R15 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R15", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/7WW5qe6g"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Hamster Ball (Animation/R6 and R15)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6 or R15", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/SCx6GRCL"))()
-        end})
+    SectionAnim:AddButton({Name = "Hamster Ball (Animation/R6 and R15)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6 or R15", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/SCx6GRCL"))()
+    end})
 
-        -- Anim
+    -- Anim
 
-        SectionAnim:AddButton({Name = "BackFlip and FrontFlip (Animation/R6 and R15)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6 or R15", Image = "rbxassetid://4483345998", Time = 3})
-            OrionLib:MakeNotification({Name = "Keybinds:", Content = "Link copied to clipboard, https://pastebin.com/EvuGWGeD", Image = "rbxassetid://4483345998", Time = 4})
-            setclipboard(tostring("https://pastebin.com/EvuGWGeD"))
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/kHcgMAmF"))()
-        end})
+    SectionAnim:AddButton({Name = "BackFlip and FrontFlip (Animation/R6 and R15)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6 or R15", Image = "rbxassetid://4483345998", Time = 3})
+        OrionLib:MakeNotification({Name = "Keybinds:", Content = "Link copied to clipboard, https://pastebin.com/EvuGWGeD", Image = "rbxassetid://4483345998", Time = 4})
+        setclipboard(tostring("https://pastebin.com/EvuGWGeD"))
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/kHcgMAmF"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Da Feets (Animation/R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Ice & Fire#0001", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/6tRBzJ77"))()
-        end})
+    SectionAnim:AddButton({Name = "Da Feets (Animation/R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Ice & Fire#0001", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/6tRBzJ77"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Human Car (Animation/R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELECTIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/JKFjYT35"))()
-        end})
+    SectionAnim:AddButton({Name = "Human Car (Animation/R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: DELECTIV/GUAVAJUICEFANCLUBFAN", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/JKFjYT35"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Rickroll Dance (Animation/R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/M7v83ydH"))()
-        end})
+    SectionAnim:AddButton({Name = "Rickroll Dance (Animation/R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/M7v83ydH"))()
+    end})
 
-        SectionAnim:AddButton({Name = "Default (Animation/R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Animated: p00tp0t/Converted and fixed: 123jl123/Music added: adam222334II", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/MSQnJUCU"))()
-        end})
+    SectionAnim:AddButton({Name = "Default (Animation/R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Animated: p00tp0t/Converted and fixed: 123jl123/Music added: adam222334II", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/MSQnJUCU"))()
+    end})
 
-        SectionAnim:AddButton({Name = "ParkourV2 (Animation/R6 Only)", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
-            OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
-            OrionLib:MakeNotification({Name = "Keybinds:", Content = "Link copied to clipboard, https://pastebin.com/x3eh3QnT", Image = "rbxassetid://4483345998", Time = 4})
-            setclipboard(tostring("https://pastebin.com/x3eh3QnT"))
-            wait(0.2)
-            loadstring(game:HttpGet("https://pastebin.com/raw/RMNJh6VW"))()
-        end})
+    SectionAnim:AddButton({Name = "ParkourV2 (Animation/R6 Only)", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Unknown", Image = "rbxassetid://4483345998", Time = 2})
+        OrionLib:MakeNotification({Name = "Required animation:", Content = "R6", Image = "rbxassetid://4483345998", Time = 3})
+        OrionLib:MakeNotification({Name = "Keybinds:", Content = "Link copied to clipboard, https://pastebin.com/x3eh3QnT", Image = "rbxassetid://4483345998", Time = 4})
+        setclipboard(tostring("https://pastebin.com/x3eh3QnT"))
+        wait(0.2)
+        loadstring(game:HttpGet("https://pastebin.com/raw/RMNJh6VW"))()
+    end})
 
-        -- Community
+    -- Community
 
-        -- Com hats
-        local HatsNameC1 = {"WDW_FoamFinger"}
-        local TotalHatsC1 = 0
-        local UserHatsC1 = 0
-        
-        local HatsNameC2 = {"VN9K [Back]", "Meshes/cyberbladeMeshAccessory"}
-        local TotalHatsC2 = 0
-        local UserHatsC2 = 0
+    -- Com hats
+    local HatsNameC1 = {"WDW_FoamFinger"}
+    local TotalHatsC1 = 0
+    local UserHatsC1 = 0
+    
+    local HatsNameC2 = {"VN9K [Back]", "Meshes/cyberbladeMeshAccessory"}
+    local TotalHatsC2 = 0
+    local UserHatsC2 = 0
 
-        SectionCommunityScripts:AddButton({Name = "One Punchman FE (Sent by: Gunther#0804)", Callback = function()
-            if _G.autoequip == true and game.PlaceId == 5100950559  then
-                        game.Players:Chat("-gh 6470135113")
-                        OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                        wait(1)
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/TyCollor/UFE/main/OnePunch'))()
-                        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                for i,v in pairs(HatsNameC1) do
-                    TotalHatsC1 += 1
-                end
-                for i,v in pairs(HatsNameC1) do
-                    if game.Players.LocalPlayer.Character ~= nil then
-                        if game.Players.LocalPlayer.Character:FindFirstChild(v) then
-                        UserHatsC1 += 1
-                        end
+    SectionCommunityScripts:AddButton({Name = "One Punchman FE (Sent by: Gunther#0804)", Callback = function()
+        if _G.autoequip == true and game.PlaceId == 5100950559  then
+                    game.Players:Chat("-gh 6470135113")
+                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+                    wait(1)
+                    loadstring(game:HttpGet(''))()
+                    OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            for i,v in pairs(HatsNameC1) do
+                TotalHatsC1 += 1
+            end
+            for i,v in pairs(HatsNameC1) do
+                if game.Players.LocalPlayer.Character ~= nil then
+                    if game.Players.LocalPlayer.Character:FindFirstChild(v) then
+                    UserHatsC1 += 1
                     end
                 end
-                if UserHatsC1 == TotalHatsC1 then
-                    UserHatsC1 = 0
-                    TotalHatsC1 = 0
-                    OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
-                    OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
-                    wait(1)
-                    loadstring(game:HttpGet('https://raw.githubusercontent.com/TyCollor/UFE/main/OnePunch'))()
-                    OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
-                    
-                else
-                    OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW", Image = "rbxassetid://4483345998", Time = 3})
-                    setclipboard(tostring("https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW"))
-                    UserHatsC1 = 0
-                    TotalHatsC1 = 0
-                end
             end
-        end})
+            if UserHatsC1 == TotalHatsC1 then
+                UserHatsC1 = 0
+                TotalHatsC1 = 0
+                OrionLib:MakeNotification({Name = "Sucefully!", Content = "All hats have been equipeds!", Image = "rbxassetid://4483345998", Time = 3})
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
+                wait(1)
+                loadstring(game:HttpGet(''))()
+                OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: mugaga#2801", Image = "rbxassetid://4483345998", Time = 2})
+                
+            else
+                OrionLib:MakeNotification({Name = "Required hats:", Content = "Link copied to clipboard, https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW", Image = "rbxassetid://4483345998", Time = 3})
+                setclipboard(tostring("https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW"))
+                UserHatsC1 = 0
+                TotalHatsC1 = 0
+            end
+        end
+    end})
 
-        SectionCommunityScripts:AddButton({Name = "FE Zenith Rifle (Sent by: Awesome#7633)", Callback = function()
-                        game.Players:Chat("-gh 6703871350,5870508493")
-                        OrionLib:MakeNotification({Name = "Requirements!", Content = "Hats ID 6703871350,5870508493", Image = "rbxassetid://4483345998", Time = 3})
-                        wait(1)
-                        loadstring(game:HttpGet('https://pastebin.com/raw/z3WKtpuJ'))()
-                        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
+    SectionCommunityScripts:AddButton({Name = "FE Zenith Rifle (Sent by: Awesome#7633)", Callback = function()
+                    game.Players:Chat("-gh 6703871350,5870508493")
+                    OrionLib:MakeNotification({Name = "Requirements!", Content = "Hats ID 6703871350,5870508493", Image = "rbxassetid://4483345998", Time = 3})
+                    wait(1)
+                    loadstring(game:HttpGet('https://pastebin.com/raw/z3WKtpuJ'))()
+                    OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: MyWorld#4430", Image = "rbxassetid://4483345998", Time = 2})
 end})
 
 
-        -- Extra / Character
+    -- Extra / Character
 
-        SectionLP:AddSlider({Name = "Speed Edit", Min = 0, Max = 500, Default = 16, Color = Color3.fromRGB(154, 220, 255), Increment = 1, ValueName = " ", Callback = function(Value)
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-        end})
-        SectionLP:AddSlider({Name = "Jump Edit", Min = 0, Max = 500, Default = 50, Color = Color3.fromRGB(255, 248, 154), Increment = 1, ValueName = " ", Callback = function(Value)
-                game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-        end})
-        SectionLP:AddSlider({Name = "World Gravity", Min = 0, Max = 1000, Default = 165, Color = Color3.fromRGB(255, 178, 166), Increment = 1, ValueName = " ", Callback = function(Value)
-            game.Workspace.Gravity = Value
-        end})
-        SectionLP:AddSlider({Name = "World Time", Min = 0, Max = 23, Default = 12, Color = Color3.fromRGB(255, 138, 174), Increment = 1, ValueName = " ", Callback = function(Value)
-            game.Lighting.ClockTime = Value
-        end})
+    SectionLP:AddSlider({Name = "Speed Edit", Min = 0, Max = 500, Default = 16, Color = Color3.fromRGB(154, 220, 255), Increment = 1, ValueName = " ", Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end})
+    SectionLP:AddSlider({Name = "Jump Edit", Min = 0, Max = 500, Default = 50, Color = Color3.fromRGB(255, 248, 154), Increment = 1, ValueName = " ", Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end})
+    SectionLP:AddSlider({Name = "World Gravity", Min = 0, Max = 1000, Default = 165, Color = Color3.fromRGB(255, 178, 166), Increment = 1, ValueName = " ", Callback = function(Value)
+        game.Workspace.Gravity = Value
+    end})
+    SectionLP:AddSlider({Name = "World Time", Min = 0, Max = 23, Default = 12, Color = Color3.fromRGB(255, 138, 174), Increment = 1, ValueName = " ", Callback = function(Value)
+        game.Lighting.ClockTime = Value
+    end})
 
-        _G.detect = false
-        SectionLP:AddToggle({ Name = "Detect If Plr Has Fling (Requires To Enable Anti Fling)", Default = false, Callback = function(Value)
-            _G.detect = Value
-        end})
+    _G.detect = false
+    SectionLP:AddToggle({ Name = "Detect If Plr Has Fling (Requires To Enable Anti Fling)", Default = false, Callback = function(Value)
+        _G.detect = Value
+    end})
 
-        SectionLP:AddButton({Name = "Anti Fling", Callback = function()
-            local Services = setmetatable({}, {__index = function(Self, Index)
-                local NewService = game.GetService(game, Index)
-                if NewService then
-                Self[Index] = NewService
-                end
-                return NewService
-                end})
-                local LocalPlayer = Services.Players.LocalPlayer
-                local function PlayerAdded(Player)
-                local Detected = false
-                local Character;
-                local PrimaryPart;
-                
-                local function CharacterAdded(NewCharacter)
-                    Character = NewCharacter
-                    repeat
-                        wait()
-                        PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
-                    until PrimaryPart
-                    Detected = false
-                end
-                
-                CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
-                Player.CharacterAdded:Connect(CharacterAdded)
-                Services.RunService.Heartbeat:Connect(function()
-                    if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
-                        if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
-                            if Detected == false and _G.detect == true then
-                                OrionLib:MakeNotification({Name = "Fling exploit detected", Content = "Player: ".. tostring(Player), Image = "rbxassetid://4483345998", Time = 1.5});
-                            end
-                            Detected = true
-                            for i,v in ipairs(Character:GetDescendants()) do
-                                if v:IsA("BasePart") then
-                                    v.CanCollide = false
-                                    v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
-                                    v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                                    v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
-                                end
-                            end
-                            PrimaryPart.CanCollide = false
-                            PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
-                            PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                            PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+    SectionLP:AddButton({Name = "Anti Fling", Callback = function()
+        local Services = setmetatable({}, {__index = function(Self, Index)
+            local NewService = game.GetService(game, Index)
+            if NewService then
+            Self[Index] = NewService
+            end
+            return NewService
+            end})
+            local LocalPlayer = Services.Players.LocalPlayer
+            local function PlayerAdded(Player)
+            local Detected = false
+            local Character;
+            local PrimaryPart;
+            
+            local function CharacterAdded(NewCharacter)
+                Character = NewCharacter
+                repeat
+                    wait()
+                    PrimaryPart = NewCharacter:FindFirstChild("HumanoidRootPart")
+                until PrimaryPart
+                Detected = false
+            end
+            
+            CharacterAdded(Player.Character or Player.CharacterAdded:Wait())
+            Player.CharacterAdded:Connect(CharacterAdded)
+            Services.RunService.Heartbeat:Connect(function()
+                if (Character and Character:IsDescendantOf(workspace)) and (PrimaryPart and PrimaryPart:IsDescendantOf(Character)) then
+                    if PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+                        if Detected == false and _G.detect == true then
+                            OrionLib:MakeNotification({Name = "Fling exploit detected", Content = "Player: ".. tostring(Player), Image = "rbxassetid://4483345998", Time = 1.5});
                         end
-                    end
-                end)
-                end
-                for i,v in ipairs(Services.Players:GetPlayers()) do
-                if v ~= LocalPlayer then
-                    PlayerAdded(v)
-                end
-                end
-                Services.Players.PlayerAdded:Connect(PlayerAdded)
-                
-                local LastPosition = nil
-                Services.RunService.Heartbeat:Connect(function()
-                pcall(function()
-                    local PrimaryPart = LocalPlayer.Character.PrimaryPart
-                    if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+                        Detected = true
+                        for i,v in ipairs(Character:GetDescendants()) do
+                            if v:IsA("BasePart") then
+                                v.CanCollide = false
+                                v.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                                v.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                                v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
+                            end
+                        end
+                        PrimaryPart.CanCollide = false
                         PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
                         PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-                        PrimaryPart.CFrame = LastPosition
-                
-                        game.StarterGui:SetCore("ChatMakeSystemMessage", {
-                            Text = "You were flung. Neutralizing velocity.";
-                            Color = Color3.fromRGB(255, 0, 0);
-                        })
-                    elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
-                        LastPosition = PrimaryPart.CFrame
+                        PrimaryPart.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0)
                     end
-                end)
-                end)
-        end})
-        SectionLP:AddButton({Name = "Hidename", Callback = function()
-            local Char = game.Players.LocalPlayer.Character
-            Char.Head.Mesh.Parent = game.CoreGui
-            Char.Head:ClearAllChildren()
-            game.CoreGui.Mesh.Parent = Char.Head
-            Char.Head.Parent = game.Lighting
-            game.Lighting.Head.Parent = Char
-        end})
-        SectionLP:AddButton({Name = "Anti AFK", Callback = function()
-            local vu = game:GetService("VirtualUser")
-            game:GetService("Players").LocalPlayer.Idled:connect(function()
-                vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-                wait(1)
-                vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+                end
             end)
-        end})
-        -- Reset
-
-        _G.justgrassR = false
-        SectionConfig:AddToggle({ Name = "Just Grass reset mode", Default = false, Callback = function(Value)
-            _G.justgrassR = Value
-        end})
-
-
-        SectionLP:AddButton({Name = "Normal Reset", Callback = function()
-            game.Players.LocalPlayer.Character.Humanoid.Health = 0
-            wait(4)
-        end})
-
-        SectionLP:AddButton({Name = "FE Hard Reset", Callback = function()
-            if game.PlaceId == 5100950559 and _G.justgrassR == true then
-                game.Players:Chat('-gr')
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                if _G.reset == false then
-                    _G.reset = true
-                    game.Players.LocalPlayer.Character.Humanoid.Name = 1
-                    local l = game.Players.LocalPlayer.Character["1"]:Clone()
-                    l.Parent = game.Players.LocalPlayer.Character
-                    l.Name = "Humanoid"
-                    wait()
-                    game.Players.LocalPlayer.Character["1"]:Destroy()
-                    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
-                    game.Players.LocalPlayer.Character.Animate.Disabled = true
-                    wait()
-                    game.Players.LocalPlayer.Character.Animate.Disabled = false
-                    game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
-                    wait()
-                    local prt = Instance.new("Model", workspace);
-                    Instance.new("Part", prt).Name="Torso";
-                    Instance.new("Part", prt).Name="Head";
-                    Instance.new("Humanoid", prt).Name="Humanoid";
-                    game.Players.LocalPlayer.Character=prt
-                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                    wait(6.5)
-                    _G.reset = false
-                else
-                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                end
             end
-        end})
-
-
-        SectionConfig:AddBind({Name = "Configure FE Hard Reset Keybind", Default = Enum.KeyCode.R, Hold = false, Callback = function()
-
-            if game.PlaceId == 5100950559 and _G.justgrassR == true then
-                game.Players:Chat('-gr')
-                OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
-            else
-                if _G.reset == false then
-                    _G.reset = true
-                    game.Players.LocalPlayer.Character.Humanoid.Name = 1
-                    local l = game.Players.LocalPlayer.Character["1"]:Clone()
-                    l.Parent = game.Players.LocalPlayer.Character
-                    l.Name = "Humanoid"
-                    wait()
-                    game.Players.LocalPlayer.Character["1"]:Destroy()
-                    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
-                    game.Players.LocalPlayer.Character.Animate.Disabled = true
-                    wait()
-                    game.Players.LocalPlayer.Character.Animate.Disabled = false
-                    game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
-                    wait()
-                    local prt = Instance.new("Model", workspace);
-                    Instance.new("Part", prt).Name="Torso";
-                    Instance.new("Part", prt).Name="Head";
-                    Instance.new("Humanoid", prt).Name="Humanoid";
-                    game.Players.LocalPlayer.Character=prt
-                    OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
-                    wait(6.5)
-                    _G.reset = false
-                else
-                    OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
-                end
+            for i,v in ipairs(Services.Players:GetPlayers()) do
+            if v ~= LocalPlayer then
+                PlayerAdded(v)
             end
-        end})
+            end
+            Services.Players.PlayerAdded:Connect(PlayerAdded)
+            
+            local LastPosition = nil
+            Services.RunService.Heartbeat:Connect(function()
+            pcall(function()
+                local PrimaryPart = LocalPlayer.Character.PrimaryPart
+                if PrimaryPart.AssemblyLinearVelocity.Magnitude > 250 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 250 then
+                    PrimaryPart.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+                    PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    PrimaryPart.CFrame = LastPosition
+            
+                    game.StarterGui:SetCore("ChatMakeSystemMessage", {
+                        Text = "You were flung. Neutralizing velocity.";
+                        Color = Color3.fromRGB(255, 0, 0);
+                    })
+                elseif PrimaryPart.AssemblyLinearVelocity.Magnitude < 50 or PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 then
+                    LastPosition = PrimaryPart.CFrame
+                end
+            end)
+            end)
+    end})
+    SectionLP:AddButton({Name = "Hidename", Callback = function()
+        local Char = game.Players.LocalPlayer.Character
+        Char.Head.Mesh.Parent = game.CoreGui
+        Char.Head:ClearAllChildren()
+        game.CoreGui.Mesh.Parent = Char.Head
+        Char.Head.Parent = game.Lighting
+        game.Lighting.Head.Parent = Char
+    end})
+    SectionLP:AddButton({Name = "Anti AFK", Callback = function()
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        end)
+    end})
+    -- Reset
 
-            shared.Visuals = { 
-            Enabled = false,
-            CrosshairEnabled = false,
-            Boxes = false,
-            Healthbar = false,
-            Tracers = false,
-            Info = false,
-            ShowAllyTeam = false,
-            UseTeamColor = true,
-            AllyColor = Color3.fromRGB(0, 127, 255),
-            EnemyColor = Color3.fromRGB(216, 34, 47),
-            Crosshair = {
-                Size = 5,
-                Thickness = 1.5,
-                Offset = 5
-            }
+    _G.justgrassR = false
+    SectionConfig:AddToggle({ Name = "Just Grass reset mode", Default = false, Callback = function(Value)
+        _G.justgrassR = Value
+    end})
+
+
+    SectionLP:AddButton({Name = "Normal Reset", Callback = function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        wait(4)
+    end})
+
+    SectionLP:AddButton({Name = "FE Hard Reset", Callback = function()
+        if game.PlaceId == 5100950559 and _G.justgrassR == true then
+            game.Players:Chat('-gr')
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            if _G.reset == false then
+                _G.reset = true
+                game.Players.LocalPlayer.Character.Humanoid.Name = 1
+                local l = game.Players.LocalPlayer.Character["1"]:Clone()
+                l.Parent = game.Players.LocalPlayer.Character
+                l.Name = "Humanoid"
+                wait()
+                game.Players.LocalPlayer.Character["1"]:Destroy()
+                game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+                game.Players.LocalPlayer.Character.Animate.Disabled = true
+                wait()
+                game.Players.LocalPlayer.Character.Animate.Disabled = false
+                game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+                wait()
+                local prt = Instance.new("Model", workspace);
+                Instance.new("Part", prt).Name="Torso";
+                Instance.new("Part", prt).Name="Head";
+                Instance.new("Humanoid", prt).Name="Humanoid";
+                game.Players.LocalPlayer.Character=prt
+                OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                wait(6.5)
+                _G.reset = false
+            else
+                OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
+            end
+        end
+    end})
+
+
+    SectionConfig:AddBind({Name = "Configure FE Hard Reset Keybind", Default = Enum.KeyCode.R, Hold = false, Callback = function()
+
+        if game.PlaceId == 5100950559 and _G.justgrassR == true then
+            game.Players:Chat('-gr')
+            OrionLib:MakeNotification({Name = "Sucefully!", Content = "Just Grass mode reset!", Image = "rbxassetid://4483345998", Time = 2})
+        else
+            if _G.reset == false then
+                _G.reset = true
+                game.Players.LocalPlayer.Character.Humanoid.Name = 1
+                local l = game.Players.LocalPlayer.Character["1"]:Clone()
+                l.Parent = game.Players.LocalPlayer.Character
+                l.Name = "Humanoid"
+                wait()
+                game.Players.LocalPlayer.Character["1"]:Destroy()
+                game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+                game.Players.LocalPlayer.Character.Animate.Disabled = true
+                wait()
+                game.Players.LocalPlayer.Character.Animate.Disabled = false
+                game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+                wait()
+                local prt = Instance.new("Model", workspace);
+                Instance.new("Part", prt).Name="Torso";
+                Instance.new("Part", prt).Name="Head";
+                Instance.new("Humanoid", prt).Name="Humanoid";
+                game.Players.LocalPlayer.Character=prt
+                OrionLib:MakeNotification({Name = "Resetting...", Content = "Wait a few seconds, reset in progress.", Image = "rbxassetid://4483345998", Time = 6.5})
+                wait(6.5)
+                _G.reset = false
+            else
+                OrionLib:MakeNotification({Name = "Warning!", Content = "Reset already in progress!", Image = "rbxassetid://4483345998", Time = 2})
+            end
+        end
+    end})
+
+        shared.Visuals = { 
+        Enabled = false,
+        CrosshairEnabled = false,
+        Boxes = false,
+        Healthbar = false,
+        Tracers = false,
+        Info = false,
+        ShowAllyTeam = false,
+        UseTeamColor = true,
+        AllyColor = Color3.fromRGB(0, 127, 255),
+        EnemyColor = Color3.fromRGB(216, 34, 47),
+        Crosshair = {
+            Size = 5,
+            Thickness = 1.5,
+            Offset = 5
         }
+    }
 
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/TyCollor/UFE/main/EspLib"))()
+    loadstring(game:HttpGet(""))()
 
-        SectionESP:AddToggle({ Name = "Enable ESP", Default = false, Callback = function(Value)
-            shared.Visuals.Enabled = Value
-        end})
+    SectionESP:AddToggle({ Name = "Enable ESP", Default = false, Callback = function(Value)
+        shared.Visuals.Enabled = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Boxes", Default = false, Callback = function(Value)
-            shared.Visuals.Boxes = Value
-        end})
+    SectionESP:AddToggle({ Name = "Boxes", Default = false, Callback = function(Value)
+        shared.Visuals.Boxes = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Names", Default = false, Callback = function(Value)
-            shared.Visuals.Info = Value
-        end})
+    SectionESP:AddToggle({ Name = "Names", Default = false, Callback = function(Value)
+        shared.Visuals.Info = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Player Healthbar", Default = false, Callback = function(Value)
-            shared.Visuals.Healthbar = Value
-        end})
+    SectionESP:AddToggle({ Name = "Player Healthbar", Default = false, Callback = function(Value)
+        shared.Visuals.Healthbar = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Tracers", Default = false, Callback = function(Value)
-            shared.Visuals.Tracers = Value
-        end})
+    SectionESP:AddToggle({ Name = "Tracers", Default = false, Callback = function(Value)
+        shared.Visuals.Tracers = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Show Allies", Default = false, Callback = function(Value)
-            shared.Visuals.ShowAllyTeam = Value
-        end})
+    SectionESP:AddToggle({ Name = "Show Allies", Default = false, Callback = function(Value)
+        shared.Visuals.ShowAllyTeam = Value
+    end})
 
-        SectionESP:AddToggle({ Name = "Team Colors", Default = true, Callback = function(Value)
-            shared.Visuals.UseTeamColor = Value
-        end})
+    SectionESP:AddToggle({ Name = "Team Colors", Default = true, Callback = function(Value)
+        shared.Visuals.UseTeamColor = Value
+    end})
 
-        -- Teleport
+    -- Teleport
 
-        _G.plr = "Select player to teleport"
-        local drop = SectionTeleport:AddDropdown({Name = "Select Player Here", Default = "Select player to teleport", Options = listplr, Callback = function(Value)
-            _G.plr = Value
-        end})
-        SectionTeleport:AddButton({Name = "Teleport to selected player", Callback = function()
-            if _G.plr == "Select player to teleport" then
-                OrionLib:MakeNotification({Name = "Error!", Content = "Player = nil!", Image = "rbxassetid://4483345998", Time = 3})
-            else 
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[_G.plr].Character.HumanoidRootPart.CFrame
-            end
-        end})  
-        SectionTeleport:AddButton({Name = "Refresh Dropdown", Callback = function()
-            local listplr = {}
-            for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-                    table.insert(listplr, v.Name)
-            end
-            drop:Refresh(listplr ,true)
-        end})
-
-
-        SectionGenTeleport:AddButton({Name = "Copy coordinates", Callback = function()
-            OrionLib:MakeNotification({Name = "Sucefully!", Content = "Cords copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
-            pcall(function()
-                setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))  
-            end)
-        end})
-        SectionGenTeleport:AddButton({Name = "Generate Teleport Script", Callback = function()
-            OrionLib:MakeNotification({Name = "Sucefully!", Content = "Script copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
-            pcall(function()
-                local pos = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-                setclipboard("game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new("..pos..")")  
-            end)
-        end})
+    _G.plr = "Select player to teleport"
+    local drop = SectionTeleport:AddDropdown({Name = "Select Player Here", Default = "Select player to teleport", Options = listplr, Callback = function(Value)
+        _G.plr = Value
+    end})
+    SectionTeleport:AddButton({Name = "Teleport to selected player", Callback = function()
+        if _G.plr == "Select player to teleport" then
+            OrionLib:MakeNotification({Name = "Error!", Content = "Player = nil!", Image = "rbxassetid://4483345998", Time = 3})
+        else 
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[_G.plr].Character.HumanoidRootPart.CFrame
+        end
+    end})  
+    SectionTeleport:AddButton({Name = "Refresh Dropdown", Callback = function()
+        local listplr = {}
+        for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+                table.insert(listplr, v.Name)
+        end
+        drop:Refresh(listplr ,true)
+    end})
 
 
-        _G.timetotween = 3 
-
-        SectionGenTeleport:AddSlider({Name = "Tween Time", Min = 1, Max = 15, Default = 3, Color = Color3.fromRGB(154, 220, 255), Increment = 1, ValueName = " ", Callback = function(Value)
-            _G.timetotween = Value
-        end})
-        SectionGenTeleport:AddButton({Name = "Generate Tween Teleport Script", Callback = function()
-            OrionLib:MakeNotification({Name = "Sucefully!", Content = "Tween script copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
-                local pos = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-                setclipboard('tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new('.._G.timetotween..', Enum.EasingStyle.Linear)\ntweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new('..pos..')}):Play()')  
-        end})
-
-
-
-        SectionTpGames:AddButton({Name = "Rejoin In This Game", Callback = function()
-            game:GetService("TeleportService"):Teleport(game.PlaceId, player)
-        end})
-
-        _G.game = "Select game to teleport"
-        SectionTpGames:AddDropdown({Name = "Select Game Here", Default = "Select game to teleport", Options = {"Just Grass", "Natural Disaster", "Prison Life", "Life In Paradise (Force R6)", "White Room (Force R15)", "MIC UP", "Pick A Side", "Rate My Avatar", "Ro-Chat Spatial Voice"}, Callback = function(Value)
-            _G.game = Value
-        end})
-
-        SectionTpGames:AddButton({Name = "Teleport To Selected Game", Callback = function()
-            if _G.game == "Select game to teleport" then
-                OrionLib:MakeNotification({Name = "Warning!", Content = "Select game first to teleport!", Image = "rbxassetid://4483345998", Time = 3})
-            elseif _G.game == "Just Grass" then
-                game:GetService("TeleportService"):Teleport(5100950559, player)
-            elseif _G.game == "Natural Disaster" then
-                game:GetService("TeleportService"):Teleport(189707, player)
-            elseif _G.game == "Prison Life" then
-                game:GetService("TeleportService"):Teleport(155615604, player)
-            elseif _G.game == "Life In Paradise (Force R6)" then
-                game:GetService("TeleportService"):Teleport(1662219031, player)
-            elseif _G.game == "White Room (Force R15)" then
-                game:GetService("TeleportService"):Teleport(4765805939, player)
-            elseif _G.game == "MIC UP" then
-                game:GetService("TeleportService"):Teleport(6884319169, player)
-            elseif _G.game == "Pick A Side" then
-                game:GetService("TeleportService"):Teleport(663655429, player)
-            elseif _G.game == "Rate My Avatar" then
-                game:GetService("TeleportService"):Teleport(6708206173, player)
-            elseif _G.game == "Ro-Chat Spatial Voice" then
-                game:GetService("TeleportService"):Teleport(6154671407, player)
-            end
-        end})
-
-        SectionScripts:AddButton({Name = "Infinite Yield", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: EdgeIY", Image = "rbxassetid://4483345998", Time = 3})
-            wait(3)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-        end})
-        SectionScripts:AddButton({Name = "Shed's Bypasser V3", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Shed", Image = "rbxassetid://4483345998", Time = 3})
-            wait(3)
-            loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
-        end})
-        SectionScripts:AddButton({Name = "R15 Emotes", Callback = function()
-            OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Gi#7331", Image = "rbxassetid://4483345998", Time = 3})
-            OrionLib:MakeNotification({Name = "Toggleable:", Content = "Press Comma to Open", Image = "rbxassetid://4483345998", Time = 7})
-            wait(3)
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Gi7331/scripts/main/Emote.lua", true))()
-        end})
+    SectionGenTeleport:AddButton({Name = "Copy coordinates", Callback = function()
+        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Cords copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
+        pcall(function()
+            setclipboard(tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position))  
+        end)
+    end})
+    SectionGenTeleport:AddButton({Name = "Generate Teleport Script", Callback = function()
+        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Script copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
+        pcall(function()
+            local pos = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+            setclipboard("game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new("..pos..")")  
+        end)
+    end})
 
 
-        SectionCredits:AddParagraph("Important Peoples","Development: Dvrknvss#0688 and collorem#4664                                                                 Script Tester/Finder: On_Man#9106                                                    Script Contribuitons: Lego#9007 and NK#2022                                                    Obfuscation Daddy: NK#2022                                                                        UI: Orion Library")
-        SectionCredits:AddParagraph("Important!","Every script added here may contain bugs, it isn't our mistake.            All scripts works properly, some games doesn't support some FE. Don't worry if isn't working properly.")
-        SectionCredits:AddButton({Name = "Click To Copy Discord Link ", Callback = function()
-            OrionLib:MakeNotification({Name = "Join pls :)", Content = "Link copied to clipboard, https://discord.gg/McWdrB4wSs", Image = "rbxassetid://4483345998", Time = 3})
-            setclipboard(tostring("https://discord.gg/McWdrB4wSs"))
-        end})
-        local market = game:GetService("MarketplaceService")
-        local info = market:GetProductInfo(game.PlaceId, Enum.InfoType.Asset)
-        plr = game:GetService'Players'.LocalPlayer
-        
-        SectionConfig:AddParagraph("Informations","UserName: "..game.Players.LocalPlayer.Name.."                                                                           User ID: "..game.Players.LocalPlayer.UserId.."                                                                Exploit: "..identifyexecutor().."                                                                             AccountAge: "..plr.AccountAge.."                                                                                        PlaceID: ".. game.PlaceId)
-        OrionLib:Init()
+    _G.timetotween = 3 
+
+    SectionGenTeleport:AddSlider({Name = "Tween Time", Min = 1, Max = 15, Default = 3, Color = Color3.fromRGB(154, 220, 255), Increment = 1, ValueName = " ", Callback = function(Value)
+        _G.timetotween = Value
+    end})
+    SectionGenTeleport:AddButton({Name = "Generate Tween Teleport Script", Callback = function()
+        OrionLib:MakeNotification({Name = "Sucefully!", Content = "Tween script copied to clipboard", Image = "rbxassetid://4483345998", Time = 3})
+            local pos = tostring(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+            setclipboard('tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new('.._G.timetotween..', Enum.EasingStyle.Linear)\ntweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new('..pos..')}):Play()')  
+    end})
+
+
+
+    SectionTpGames:AddButton({Name = "Rejoin In This Game", Callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+    end})
+
+    _G.game = "Select game to teleport"
+    SectionTpGames:AddDropdown({Name = "Select Game Here", Default = "Select game to teleport", Options = {"Just Grass", "Natural Disaster", "Prison Life", "Life In Paradise (Force R6)", "White Room (Force R15)", "MIC UP", "Pick A Side", "Rate My Avatar", "Ro-Chat Spatial Voice"}, Callback = function(Value)
+        _G.game = Value
+    end})
+
+    SectionTpGames:AddButton({Name = "Teleport To Selected Game", Callback = function()
+        if _G.game == "Select game to teleport" then
+            OrionLib:MakeNotification({Name = "Warning!", Content = "Select game first to teleport!", Image = "rbxassetid://4483345998", Time = 3})
+        elseif _G.game == "Just Grass" then
+            game:GetService("TeleportService"):Teleport(5100950559, player)
+        elseif _G.game == "Natural Disaster" then
+            game:GetService("TeleportService"):Teleport(189707, player)
+        elseif _G.game == "Prison Life" then
+            game:GetService("TeleportService"):Teleport(155615604, player)
+        elseif _G.game == "Life In Paradise (Force R6)" then
+            game:GetService("TeleportService"):Teleport(1662219031, player)
+        elseif _G.game == "White Room (Force R15)" then
+            game:GetService("TeleportService"):Teleport(4765805939, player)
+        elseif _G.game == "MIC UP" then
+            game:GetService("TeleportService"):Teleport(6884319169, player)
+        elseif _G.game == "Pick A Side" then
+            game:GetService("TeleportService"):Teleport(663655429, player)
+        elseif _G.game == "Rate My Avatar" then
+            game:GetService("TeleportService"):Teleport(6708206173, player)
+        elseif _G.game == "Ro-Chat Spatial Voice" then
+            game:GetService("TeleportService"):Teleport(6154671407, player)
+        end
+    end})
+
+    SectionScripts:AddButton({Name = "Infinite Yield", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: EdgeIY", Image = "rbxassetid://4483345998", Time = 3})
+        wait(3)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end})
+    SectionScripts:AddButton({Name = "Shed's Bypasser V3", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Shed", Image = "rbxassetid://4483345998", Time = 3})
+        wait(3)
+        loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
+    end})
+    SectionScripts:AddButton({Name = "R15 Emotes", Callback = function()
+        OrionLib:MakeNotification({Name = "Script executed", Content = "Script credits: Gi#7331", Image = "rbxassetid://4483345998", Time = 3})
+        OrionLib:MakeNotification({Name = "Toggleable:", Content = "Press Comma to Open", Image = "rbxassetid://4483345998", Time = 7})
+        wait(3)
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gi7331/scripts/main/Emote.lua", true))()
+    end})
+
+
+    SectionCredits:AddParagraph("Important Peoples","Development: Dvrknvss#0688 and collorem#4664                                                                 Script Tester/Finder: On_Man#9106                                                    Script Contribuitons: Lego#9007 and NK#2022                                                    Obfuscation Daddy: NK#2022                                                                        UI: Orion Library")
+    SectionCredits:AddParagraph("Important!","Every script added here may contain bugs, it isn't our mistake.            All scripts works properly, some games doesn't support some FE. Don't worry if isn't working properly.")
+    SectionCredits:AddButton({Name = "Click To Copy Discord Link ", Callback = function()
+        OrionLib:MakeNotification({Name = "Join pls :)", Content = "Link copied to clipboard, https://discord.gg/McWdrB4wSs", Image = "rbxassetid://4483345998", Time = 3})
+        setclipboard(tostring("https://discord.gg/McWdrB4wSs"))
+    end})
+    local market = game:GetService("MarketplaceService")
+    local info = market:GetProductInfo(game.PlaceId, Enum.InfoType.Asset)
+    plr = game:GetService'Players'.LocalPlayer
+    
+    SectionConfig:AddParagraph("Informations","UserName: "..game.Players.LocalPlayer.Name.."                                                                           User ID: "..game.Players.LocalPlayer.UserId.."                                                                Exploit: "..identifyexecutor().."                                                                             AccountAge: "..plr.AccountAge.."                                                                                        PlaceID: ".. game.PlaceId)
+    OrionLib:Init()
+end
+scripter()
