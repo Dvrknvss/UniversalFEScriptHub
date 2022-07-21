@@ -27,7 +27,6 @@ function scripter()
     local SectionTpGames = Teleport:AddSection({Name = "Games Teleport To Use FE"})
     local SectionGenTeleport = Teleport:AddSection({Name = "Teleport Generator"})
     local SectionScripts = Extra:AddSection({Name = "Scripts"})
-    local SectionESP = Extra:AddSection({Name = "ESP Function"})
     local SectionCredits = CreditsAndConfig:AddSection({Name = "Credits"})
     local SectionConfig = CreditsAndConfig:AddSection({Name = "Configs"})
     
@@ -1578,53 +1577,6 @@ end})
         end
     end})
 
-        shared.Visuals = { 
-        Enabled = false,
-        CrosshairEnabled = false,
-        Boxes = false,
-        Healthbar = false,
-        Tracers = false,
-        Info = false,
-        ShowAllyTeam = false,
-        UseTeamColor = true,
-        AllyColor = Color3.fromRGB(0, 127, 255),
-        EnemyColor = Color3.fromRGB(216, 34, 47),
-        Crosshair = {
-            Size = 5,
-            Thickness = 1.5,
-            Offset = 5
-        }
-    }
-
-    loadstring(game:HttpGet(""))()
-
-    SectionESP:AddToggle({ Name = "Enable ESP", Default = false, Callback = function(Value)
-        shared.Visuals.Enabled = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Boxes", Default = false, Callback = function(Value)
-        shared.Visuals.Boxes = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Names", Default = false, Callback = function(Value)
-        shared.Visuals.Info = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Player Healthbar", Default = false, Callback = function(Value)
-        shared.Visuals.Healthbar = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Tracers", Default = false, Callback = function(Value)
-        shared.Visuals.Tracers = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Show Allies", Default = false, Callback = function(Value)
-        shared.Visuals.ShowAllyTeam = Value
-    end})
-
-    SectionESP:AddToggle({ Name = "Team Colors", Default = true, Callback = function(Value)
-        shared.Visuals.UseTeamColor = Value
-    end})
 
     -- Teleport
 
