@@ -1651,7 +1651,7 @@ end})
     end})
 
 
-    SectionCredits:AddParagraph("Important Peoples","Development: Dvrknvss#0688 and collorem#4664                                                                 Script Tester/Finder: On_Man#9106                                                    Script Contribuitons: Lego#9007 and NK#2022                                                    Obfuscation Daddy: NK#2022                                                                        UI: Orion Library")
+    SectionCredits:AddParagraph("Important Peoples","Creator and Owner: Dvrknvss#0688                                               Development: collorem#4664 (Retired)                                                                 Script Tester/Finder: On_Man#9106                                                    Script Contribuitons: Lego#9007 and NK#2022                                                  UI: Orion Library")
     SectionCredits:AddParagraph("Important!","Every script added here may contain bugs, it isn't our mistake.            All scripts works properly, some games doesn't support some FE. Don't worry if isn't working properly.")
     SectionCredits:AddButton({Name = "Click To Copy Discord Link ", Callback = function()
         OrionLib:MakeNotification({Name = "Join pls :)", Content = "Link copied to clipboard, https://discord.gg/McWdrB4wSs", Image = "rbxassetid://4483345998", Time = 3})
