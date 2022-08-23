@@ -1,1 +1,1 @@
-loadstring(game:HttpGet('https://gist.githubusercontent.com/Dvrknvss/489ddb447b6ff1cd27bb3b017ae33825/raw/b2449d25c0b97fa2d0e80a83d005d6c04ff22267/lastufe'))()
+loadstring(game:HttpGet('https://gist.githubusercontent.com/Dvrknvss/a268693e151c17dceee7bbd54a75c859/raw/4fab45105d109d24a3969810c92a3fb2517f271a/fixed'))()
